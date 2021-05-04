@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": " (cd src && nodemon server.js) & react-scripts start ",
-    "build": "npm i react-bootstrap4-modal && npm install react-hook-form && npm install axios && npm install  && react-scripts build",
+    "build": "npm i react-bootstrap4-modal && npm install react-hook-form && npm install axios  && (cd src && nodemon server.js) && npm install  && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
