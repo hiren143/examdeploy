@@ -14,7 +14,7 @@ const Studentlogin = () => {
         console.log(data["username"]);
 
 
-        axios.get('http://localhost:4000/user/'+data["username"]).then(res => {
+        axios.get('https://hirenserver.herokuapp.com/user'+data["username"]).then(res => {
           console.log("api response",res["data"]);
           if(data["password"] == res["data"][0]["password"])
           { 
