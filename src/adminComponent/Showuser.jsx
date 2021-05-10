@@ -23,7 +23,7 @@ function Showuser() {
         setIsModal(false);
         //validateAdmin(data)
         document.getElementById("create-course-form").reset();
-        axios.post('http://localhost:4000/user/', data).then((res) => {
+        axios.post('https://hirenserver.herokuapp.com/user/', data).then((res) => {
             console.log("on submit:-", res["data"]);
             getdata();
         })
@@ -99,7 +99,7 @@ function Showuser() {
                             //console.log(oldData)
 
                             console.log(oldData["id"]);
-                            axios.put('http://localhost:4000/user/' + oldData["id"], newData).then((res) => {
+                            axios.put('https://hirenserver.herokuapp.com/user/' + oldData["id"], newData).then((res) => {
                                 console.log("on submit:-", res);
                                 getdata();
                             })
@@ -113,7 +113,7 @@ function Showuser() {
                         setTimeout(() => {
                             console.log(oldData["id"]);
                             //getdata();
-                            axios.delete('http://localhost:4000/user/'+oldData["id"]).then(res=>{
+                            axios.delete('https://hirenserver.herokuapp.com/user/'+oldData["id"]).then(res=>{
                                 console.log("delete",res);
                                 getdata();
                             }).catch((err)=>{console.log(err)});
