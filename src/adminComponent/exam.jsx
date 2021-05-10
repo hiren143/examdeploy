@@ -42,7 +42,7 @@ const Exam = () => {
     function getalldata() {
         let x = [];
        // console.log("count in getdat", count)
-        axios.get('http://localhost:4000/question/').then(res => {
+        axios.get('https://hirenserver.herokuapp.com/question/').then(res => {
            // console.log("api response", res["data"].length);
             setMaxno(res["data"].length);
         }).catch((err) => console.log(err));
