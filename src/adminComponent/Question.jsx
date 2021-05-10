@@ -20,7 +20,7 @@ function Showuser() {
     const onSubmit = (data) => {
         console.log(data);
         setIsModal(false);
-        axios.post('http://localhost:4000/question/', data).then((res) => {
+        axios.post('https://hirenserver.herokuapp.com/question/', data).then((res) => {
             console.log("on submit question :-", res);
             getdata();
         }).catch((err) => { console.log("add error", err) });
@@ -30,7 +30,7 @@ function Showuser() {
 
     function getdata() {
         let x = [];
-        axios.get('http://localhost:4000/question/').then(res => {
+        axios.get('https://hirenserver.herokuapp.com/question/').then(res => {
             console.log("api response", res["data"]);
             res["data"].map((item) => {
                 let temp = {}
@@ -95,7 +95,7 @@ function Showuser() {
                             console.log(newData);
 
                             console.log(oldData["id"]);
-                            axios.put('http://localhost:4000/question/' + oldData["id"], newData).then((res) => {
+                            axios.put('https://hirenserver.herokuapp.com/question/' + oldData["id"], newData).then((res) => {
                                 console.log("on submit:-", res);
                                 getdata();
                             })
@@ -108,7 +108,7 @@ function Showuser() {
                     new Promise((resolve, reject) => {
                         setTimeout(() => {
                             console.log(oldData["id"]);
-                            axios.delete('http://localhost:4000/question/' + oldData["id"]).then(res => {
+                            axios.delete('https://hirenserver.herokuapp.com/question/' + oldData["id"]).then(res => {
                                 console.log("delete", res);
                                 getdata();
                             }).catch((err) => { console.log(err) });
