@@ -39,7 +39,7 @@ function Showuser() {
 
     function getdata() {
         let x = [];
-        axios.get('http://localhost:4000/user/').then(res => {
+        axios.get('https://hirenserver.herokuapp.com/user/').then(res => {
             //  console.log("api response",res["data"]);
             res["data"].map((item) => {
                 let temp = {}
