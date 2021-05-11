@@ -50,7 +50,7 @@ const Exam = () => {
     function getdata() {
         let x = [];
        // console.log("count in getdat", count)
-        axios.get('http://localhost:4000/question/' + count).then(res => {
+        axios.get('https://hirenserver.herokuapp.com/question/' + count).then(res => {
          //   console.log("api response", res["data"]);
             setData(res["data"][0]);
         }).catch((err) => console.log(err));
@@ -86,7 +86,7 @@ const Exam = () => {
     {
         let anskey=[]
         console.log(final);
-        axios.get('http://localhost:4000/question/').then((res) => {
+        axios.get('https://hirenserver.herokuapp.com/question/').then((res) => {
            // console.log("on submit question :-", res);
             res["data"].map((item)=>{
                let x={}
